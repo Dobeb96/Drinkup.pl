@@ -1,9 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
 .column {
-    float: left;
+    /* float: left; */
     /* padding: 10px; */
 }
 
@@ -15,23 +11,38 @@
 
 input[type="text"] {
     color: black;
-    width: 30vmax;
+    width: 23vmax;
     padding-left: 1em;
     line-height: 3em;
 }
 
 div.search_by{
 	line-height: 2em;
+} div#alcohols {
+    margin-top: 5%;
+    width: 30vmax;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+} div#alcohols div {
+    padding: 0 1em;
+} div#other_filters {
+    margin-top: 5%;
+    width: 30vmax;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 img#search_by_name {
     cursor: pointer;
-    margin-top: 0.25em;
+    padding: 0.25em;
     height: 2.5em;
 } img#search_custom {
     margin-top: 0.25em;
     height: 2.5em;
 } #search_custom_button {
+    margin-top: 5%;
     cursor:pointer;
     text-align: center;
     width: 30vmax;
@@ -41,12 +52,23 @@ img#search_by_name {
     height: 2.5em;
 }
 
+div#inputs {
+    display: flex;
+    flex-direction: column;
+    width: 30vmax;
+} #inputs .search1 inputs {
+    float: left;
+}
+
+div#header_text {
+    margin-top: 8%;
+    text-align: center;
+    width: 30vmax;
+}
+
 table {
-    width: 30em;
-	display: table;
-	border-spacing: 20px;
-	word-spacing: 3px;
-	padding: 10px;
+    width: 30vmax;
+    text-align: center;
 }
 
 .hidden {

@@ -4,30 +4,47 @@
 
     <table>
       <tr class="search1">
-        <td><input type="text" name="search_by_name" #search1 placeholder="Wyszukaj drink po nazwie"/></td>
+        <td><input type="text" name="search_by_name" #search1 placeholder="Wyszukaj drinka po nazwie"/></td>
         <td><img (click)="searchByName(search1.value, $event)" id="search_by_name" src="../../assets/u254.png" alt="szukaj"></td>
       </tr>
-      <tr class="search2">
-        <td><input type="text" name="search_by_components" placeholder="Skomponuj swój drink"/></td>
-      </tr>
     </table>
+
+    <div id="header_text">
+      <h1>Skomponuj swojego drinka:</h1>
+    </div>
+    <div id="alcohols" class="search2">
+        <div><label for="gin">Gin</label><input id="gin" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="vodka">Wódka</label><input id="vodka" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="whiskey">Whiskey</label><input id="whiskey" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="rum">Rum</label><input id="rum" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="wine">Wino</label><input id="wine" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="ale">Ale</label><input id="ale" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="beer">Piwo</label><input id="beer" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="amaretto">Amaretto</label><input id="amaretto" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="campari">Campari</label><input id="campari" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="sambuca">Sambuca</label><input id="sambuca" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="grenadine">Grenadine</label><input id="grenadine" type="radio" class="filter" name="alcohol"/></div>
+    </div>
+
+    <div id="other_filters" class="search2">
+      <div>
+        Wyszukaj po typie koktajlu:<br><br>
+        <input type="checkbox" class="filter">Shot<br>
+        <input type="checkbox" class="filter">Drink<br>
+        <input type="checkbox" class="filter">Koktajl<br>
+      </div>
+      <div>
+        Wyszukaj wszystkie drinki:<br><br>
+        <input type="checkbox" class="filter">Alkoholowe<br>
+        <input type="checkbox" class="filter">Bezalkoholowe<br><br>
+      </div>
+
+      <button id="search_custom_button" (click)="searchByFilters()">
+        <img id="search_custom" src="../../assets/u254.png">
+      </button>
+    </div>
     
-    <table class="com search2">
-      <tr>
-        <td><label for="gin">Gin</label><input id="gin" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="vodka">Wódka</label><input id="vodka" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="whiskey">Whiskey</label><input id="whiskey" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="rum">Rum</label><input id="rum" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="wine">Wino</label><input id="wine" type="radio" class="filter" name="alcohol"/></td>
-      </tr>
-      <tr>	
-        <td><label for="ale">Ale</label><input id="ale" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="beer">Piwo</label><input id="beer" type="radio" class="filter" name="alcohol"/></td>
-        <td><label for="amaretto">Amaretto</label><input id="amaretto" type="radio" class="filter" name="alcohol"/></td>
-      </tr>
-    </table>
-    
-    <table class="search2">
+    <!-- <table class="search2">
     <tr>
       <td>
         Wyszukaj po typie koktajlu:<br><br>
@@ -48,7 +65,7 @@
         </button>
       </td>
     </tr>
-    </table>
+    </table> -->
 
     <div id="drinks_list">
       <!-- drinks from API are placed here -->
