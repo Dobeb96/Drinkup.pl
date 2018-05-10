@@ -81,14 +81,12 @@ export class HomepageComponent implements OnInit {
     }
 
     var filters = []
-    // var filtersCollection = document.getElementsByClassName('filter');
-    var f = document.querySelectorAll('.filter');
-    for (var i = 0; i < f.length; i++) {
-      // if (f[i].checked) {
-      //   console.log(f[i].checked);
-      //   console.log(f[i].id);
-      //   filters.push(f[i].id);
-      // }
+    var filterRadio = document.getElementsByClassName('filter');
+    for (var i = 0; i < filterRadio.length; i++) {
+      var filterInput = <HTMLInputElement>filterRadio[i];
+      if (filterInput.checked) {
+        filters.push(filterRadio[i].id);
+      }
     }
 
     document.getElementById('back_button').classList.remove('hidden');
