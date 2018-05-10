@@ -84,11 +84,11 @@ export class HomepageComponent implements OnInit {
     // var filtersCollection = document.getElementsByClassName('filter');
     var f = document.querySelectorAll('.filter');
     for (var i = 0; i < f.length; i++) {
-      if (f[i].checked) {
-        console.log(f[i].checked);
-        console.log(f[i].id);
-        filters.push(f[i].id);
-      }
+      // if (f[i].checked) {
+      //   console.log(f[i].checked);
+      //   console.log(f[i].id);
+      //   filters.push(f[i].id);
+      // }
     }
 
     document.getElementById('back_button').classList.remove('hidden');
