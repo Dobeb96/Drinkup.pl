@@ -1,3 +1,8 @@
+h2 {
+    font-weight: normal;
+    font-size: 20px;
+}
+
 input[type="text"] {
     color: black;
     width: 30vmax;
@@ -20,10 +25,10 @@ div.search_by{
     display: flex;
     justify-content: space-evenly;
 } div#other_filters div {
-    margin-top: 2%;
+    /* margin-top: 2%; */
     margin-bottom: 3%;
     text-align: center;
-} div#other_filters div *:last-child {
+} div#other_filters div div:last-child {
     padding-bottom: 2%;
     margin-bottom: 5%;
 }

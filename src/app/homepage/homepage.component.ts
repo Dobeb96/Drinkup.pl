@@ -28,12 +28,40 @@ export class HomepageComponent implements OnInit {
     var scope = this;
 
     var HTTPRequest = new XMLHttpRequest();
-    HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + filters[0]);
+    if (filters[0] == 'Alcoholic' || filters[0] == 'Non_Alcoholic') {
+      HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=' + filters[0]);
+    } else if (filters[0] == 'Ordinary_Drink' || filters[0] == 'Cocktail' || filters[0] == 'Shot') {
+      HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + filters[0]);
+    } else {
+      HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + filters[0]);
+    }
     HTTPRequest.onload = function() {
       var drinksArray = JSON.parse(HTTPRequest.responseText);
-      scope.printDrinksToView(drinksArray);
+      scope.printDrinksToViewWithFilters(drinksArray, filters);
     };
     HTTPRequest.send();
+  }
+
+  printDrinksToViewWithFilters(drinksArray, filters) {
+    var drinksArrayFiltered = {'drinks': []};
+    drinksArray['drinks'].forEach((drink) => {
+      if (filters[1] == undefined && filters[2] == undefined) {
+        console.log('0');
+        drinksArrayFiltered['drinks'].push(drink);
+      } else if (filters[1] != undefined && filters[2] == undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
+        console.log('1');
+        if (drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) {
+          drinksArrayFiltered['drinks'].push(drink);
+        }
+      } else if (filters[1] != undefined && filters[2] != undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
+        console.log('2');
+        if ((drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) &&
+              (drink['strAlcoholic'].substring(0,3) == filters[2].substring(0,3) || drink['strCategory'].substring(0,3) == filters[2].substring(0,3))) {
+                drinksArrayFiltered['drinks'].push(drink);
+              }
+      }
+    });
+    this.printDrinksToView(drinksArrayFiltered);
   }
 
   printDrinksToView(drinksArray) {
@@ -43,6 +71,9 @@ export class HomepageComponent implements OnInit {
 
     if (Array.isArray(drinksArray['drinks'])) {
       drinksArray['drinks'].forEach((drink) => {
+        console.log(drink);
+        var strCategory = '';
+        if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
         var outputHTML = '<div class="drink">' +
                             '<img src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
@@ -50,7 +81,7 @@ export class HomepageComponent implements OnInit {
                               drink['strDrink']  +
                               '</h1>' +
                               '<h2>' +
-                              drink['strCategory'] +
+                              strCategory +
                               '</h2>' +
                             '</div>' +
                           '</div>';

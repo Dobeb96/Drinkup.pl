@@ -3,21 +3,21 @@
     <img src='../../assets/u80.png' id="back_button" (click)="backButtonClicked()" class="hidden">
 
     <div id ="main_search" class="search1">
-      <input type="text" name="search_by_name" #search1 placeholder="Wyszukaj drinka po nazwie"/>
-      <img (click)="searchByName(search1.value, $event)" id="search_by_name" src="../../assets/u254.png" alt="szukaj">
+      <input type="text" name="search_by_name" #search1 placeholder="Search drink by name"/>
+      <img (click)="searchByName(search1.value, $event)" id="search_by_name" src="../../assets/u254.png" alt="search">
     </div>
 
     <div id="header_text">
-      <h1>Skomponuj swojego drinka:</h1>
+      <h1>Create your own drink:</h1>
     </div>
     <div id="alcohols" class="search2">
         <div><label for="gin">Gin</label><input id="gin" type="radio" class="filter" name="alcohol"/></div>
-        <div><label for="vodka">Wódka</label><input id="vodka" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="vodka">Vodka</label><input id="vodka" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="whiskey">Whiskey</label><input id="whiskey" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="rum">Rum</label><input id="rum" type="radio" class="filter" name="alcohol"/></div>
-        <div><label for="wine">Wino</label><input id="wine" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="wine">Wine</label><input id="wine" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="ale">Ale</label><input id="ale" type="radio" class="filter" name="alcohol"/></div>
-        <div><label for="beer">Piwo</label><input id="beer" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="beer">Beer</label><input id="beer" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="amaretto">Amaretto</label><input id="amaretto" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="campari">Campari</label><input id="campari" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="sambuca">Sambuca</label><input id="sambuca" type="radio" class="filter" name="alcohol"/></div>
@@ -26,15 +26,15 @@
 
     <div id="other_filters" class="search2">
       <div>
-        Wyszukaj po typie koktajlu:<br><br>
-        <input type="checkbox" class="filter">Shot<br>
-        <input type="checkbox" class="filter">Drink<br>
-        <input type="checkbox" class="filter">Koktajl<br>
+        <h2>By type of drink:<br><br></h2>
+        <!-- <div><label for="Ordinary_drink">Ordinary drink</label><input id="Ordinary_drink" type="radio" class="filter" name="alcohol"/></div> -->
+        <div><label for="Shot">Shot</label><input id="Shot" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="Cocktail">Cocktail</label><input id="Cocktail" type="radio" class="filter" name="alcohol"/></div>
       </div>
       <div>
-        Wyszukaj wszystkie drinki:<br><br>
-        <input type="checkbox" class="filter">Alkoholowe<br>
-        <input type="checkbox" class="filter">Bezalkoholowe<br><br>
+        <h2>By containment of alcohol:<br><br></h2>
+        <div><label for="Alcoholic">Alcoholic</label><input id="Alcoholic" type="radio" class="filter" name="alcohol"/></div>
+        <div><label for="Non_Alcoholic">Non-alcoholic</label><input id="Non_Alcoholic" type="radio" class="filter" name="alcohol"/></div>
       </div>
 
       <button id="search_custom_button" (click)="searchByFilters()">
