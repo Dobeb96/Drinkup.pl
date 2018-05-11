@@ -1,5 +1,20 @@
-<p>
-  profile works!
-</p>
 <div id="account-details"></div>
-<button (click)="signOut()">Sign Out</button>
+
+<h1 id="header">Profile</h1>
+
+<div id="main_container">
+  <div id="profile_container">
+  <img id="user_photo" src="">
+  <div>
+    <h1 class="description"><br>Welcome: </h1> <h1 id="user_name"></h1>
+    <p class="description"><br>Your email is: </p> <p id="user_email"></p>
+  </div>
+  </div>
+
+  <div id="logout_container">
+    <h1 class="logout">Would you like to logout?</h1>
+    <button (click)="signOut()">Logout</button>
+  </div>
+</div>
+
+<p id="logged_out_text" class="hidden">Zaloguj się, aby kontynuować</p>

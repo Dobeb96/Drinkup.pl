@@ -1,0 +1,42 @@
+#header {
+    text-align: center;
+}
+
+#profile_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+img#user_photo {
+    box-shadow: 10px 10px 48px -15px rgba(0,0,0,0.75);
+    vertical-align: top;
+    float: left;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+} .description, #user_name, #user_email {
+    display: inline;
+} .description {
+    line-height: 2em;
+} h1.description, #user_name {
+    font-size: 20px;
+}
+
+#logout_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} .logout {
+    text-align: center;
+} button {
+    cursor: pointer;
+    font-size: 16px;
+    height: 3em;
+    color: black;
+    border: 1px solid white;
+    background-color: white;
+}
+
+#logged_out_text {
+    text-align: center;
+}

@@ -16,8 +16,6 @@ export class AppComponent {
       var signIn = document.getElementById('sign-in');
       if (signIn.innerHTML == 'wyloguj się' || signIn.innerHTML == 'logout') {
         this.authService.logout();
-      } else {
-        location.reload();
       }
     });
   }

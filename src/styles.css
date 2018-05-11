@@ -22,6 +22,9 @@
     text-align: center;
 } .margin {
     margin: 2%;
+} .hidden {
+    display: none !important;
+    visibility: hidden !important;
 }
 /* END OF GENERAL */
 

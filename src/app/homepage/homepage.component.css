@@ -63,8 +63,3 @@ div#header_text {
 } div#main_search input {
     border: 1px solid white;
 }
-
-.hidden {
-    display: none !important;
-    visibility: hidden !important;
-}

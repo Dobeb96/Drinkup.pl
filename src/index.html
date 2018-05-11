@@ -47,28 +47,13 @@
   initApp = function() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // User is signed in.
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var uid = user.uid;
-        var phoneNumber = user.phoneNumber;
-        var providerData = user.providerData;
         user.getIdToken().then(function(accessToken) {
           // document.getElementById('sign-in-status').textContent = 'zalogowano';
           document.getElementById('sign-in').textContent = 'wyloguj się';
           if (document.getElementById('account-details')) {
-            document.getElementById('account-details').textContent = JSON.stringify({
-            displayName: displayName,
-            email: email,
-            emailVerified: emailVerified,
-            phoneNumber: phoneNumber,
-            photoURL: photoURL,
-            uid: uid,
-            accessToken: accessToken,
-            providerData: providerData
-          }, null, '  ');
+            document.getElementById('user_name').innerHTML = user.displayName;
+            document.getElementById('user_email').innerHTML = user.email;
+            document.getElementById('user_photo').setAttribute('src', user.photoURL);
           }
         });
       } else {
@@ -76,7 +61,8 @@
         // document.getElementById('sign-in-status').textContent = 'wylogowano';
         document.getElementById('sign-in').textContent = 'zaloguj się';
         if (document.getElementById('account-details')) {
-          document.getElementById('account-details').textContent = 'null';
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
         }
       }
     }, function(error) {
@@ -87,13 +73,30 @@
   window.addEventListener('load', function() {
     initApp()
   });
+
+  window.addEventListener('click', function() {
+    if (document.getElementById('firebaseui-auth-container')) {
+      console.log('click');
+      ui.start('#firebaseui-auth-container', uiConfig); 
+    }
+
+    if (document.getElementById('account-details')) {
+      console.log('info');
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById('user_name').innerHTML = user.displayName;
+          document.getElementById('user_email').innerHTML = user.email;
+          document.getElementById('user_photo').setAttribute('src', user.photoURL);
+        } else {
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
+        }
+      })
+    }
+  });
 </script>
 </head>
 <body>
-    <!-- <h1>Welcome to My Awesome App</h1> -->
-    <!-- <div id="sign-in-status"></div> -->
-    <!-- <div id="sign-in"></div> -->
-    <!-- <div id="account-details"></div> -->
   <app-root></app-root>
 </body>
 </html>
