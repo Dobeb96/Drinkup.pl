@@ -25,28 +25,13 @@
     ui.start('#firebaseui-auth-container', uiConfig);</script><script type="text/javascript">initApp = function() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // User is signed in.
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var uid = user.uid;
-        var phoneNumber = user.phoneNumber;
-        var providerData = user.providerData;
         user.getIdToken().then(function(accessToken) {
           // document.getElementById('sign-in-status').textContent = 'zalogowano';
           document.getElementById('sign-in').textContent = 'wyloguj się';
           if (document.getElementById('account-details')) {
-            document.getElementById('account-details').textContent = JSON.stringify({
-            displayName: displayName,
-            email: email,
-            emailVerified: emailVerified,
-            phoneNumber: phoneNumber,
-            photoURL: photoURL,
-            uid: uid,
-            accessToken: accessToken,
-            providerData: providerData
-          }, null, '  ');
+            document.getElementById('user_name').innerHTML = user.displayName;
+            document.getElementById('user_email').innerHTML = user.email;
+            document.getElementById('user_photo').setAttribute('src', user.photoURL);
           }
         });
       } else {
@@ -54,7 +39,8 @@
         // document.getElementById('sign-in-status').textContent = 'wylogowano';
         document.getElementById('sign-in').textContent = 'zaloguj się';
         if (document.getElementById('account-details')) {
-          document.getElementById('account-details').textContent = 'null';
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
         }
       }
     }, function(error) {
@@ -64,4 +50,25 @@
 
   window.addEventListener('load', function() {
     initApp()
-  });</script><link href="styles.6f262bcdea491bfe3cd0.bundle.css" rel="stylesheet"/></head><body><!-- <h1>Welcome to My Awesome App</h1> --><!-- <div id="sign-in-status"></div> --><!-- <div id="sign-in"></div> --><!-- <div id="account-details"></div> --><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js"></script><script type="text/javascript" src="polyfills.b6b2cd0d4c472ac3ac12.bundle.js"></script><script type="text/javascript" src="main.5dd442923124f1be3beb.bundle.js"></script></body></html>
+  });
+
+  window.addEventListener('click', function() {
+    if (document.getElementById('firebaseui-auth-container')) {
+      console.log('click');
+      ui.start('#firebaseui-auth-container', uiConfig); 
+    }
+
+    if (document.getElementById('account-details')) {
+      console.log('info');
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById('user_name').innerHTML = user.displayName;
+          document.getElementById('user_email').innerHTML = user.email;
+          document.getElementById('user_photo').setAttribute('src', user.photoURL);
+        } else {
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
+        }
+      })
+    }
+  });</script><link href="styles.7296debc4bb1a7edf96f.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js"></script><script type="text/javascript" src="polyfills.b6b2cd0d4c472ac3ac12.bundle.js"></script><script type="text/javascript" src="main.6d10bf0820129f92b2aa.bundle.js"></script></body></html>
