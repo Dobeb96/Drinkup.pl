@@ -43,25 +43,6 @@ export class HomepageComponent implements OnInit {
     HTTPRequest.send();
   }
 
-  printDrinksToViewWithFilters(drinksArray, filters) {
-    var drinksArrayFiltered = {'drinks': []};
-    drinksArray['drinks'].forEach((drink) => {
-      if (filters[1] == undefined && filters[2] == undefined) {
-        drinksArrayFiltered['drinks'].push(drink);
-      } else if (filters[1] != undefined && filters[2] == undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
-        if (drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) {
-          drinksArrayFiltered['drinks'].push(drink);
-        }
-      } else if (filters[1] != undefined && filters[2] != undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
-        if ((drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) &&
-              (drink['strAlcoholic'].substring(0,3) == filters[2].substring(0,3) || drink['strCategory'].substring(0,3) == filters[2].substring(0,3))) {
-                drinksArrayFiltered['drinks'].push(drink);
-              }
-      }
-    });
-    this.printDrinksToView(drinksArrayFiltered);
-  }
-
   printDrinksToView(drinksArray) {
     var outputDrinks = document.getElementById('drinks_list');
 
@@ -71,7 +52,7 @@ export class HomepageComponent implements OnInit {
       drinksArray['drinks'].forEach((drink) => {
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
-        var outputHTML = '<div class="drink">' +
+        var outputHTML = '<div class="drink" (click)="method()">' +
                             '<img src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
                               '<h1>' +
@@ -80,6 +61,7 @@ export class HomepageComponent implements OnInit {
                               '<h2>' +
                               strCategory +
                               '</h2>' +
+                              '<p routerLink="about">about</p>' +
                             '</div>' +
                           '</div>';
         outputDrinks.innerHTML += outputHTML;
@@ -87,6 +69,10 @@ export class HomepageComponent implements OnInit {
     } else {
       outputDrinks.innerHTML = '<h1>Brak drinków do wyświetlenia!';
     }
+  }
+
+  method() {
+    document.getElementsByClassName('drink')[0].addEventListener
   }
 
   searchByName(input, event) {
