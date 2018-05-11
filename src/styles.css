@@ -104,7 +104,7 @@
     width: 180px;
     height: 180px;
     margin-right: 1em;
-    object-fit: contain;
+    object-fit: cover;
 } #drinks_list .drink h2 {
     font-weight: normal;
     line-height: 1em;
