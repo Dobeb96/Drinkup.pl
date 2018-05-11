@@ -30,14 +30,15 @@ export class HomepageComponent implements OnInit {
     var HTTPRequest = new XMLHttpRequest();
     if (filters[0] == 'Alcoholic' || filters[0] == 'Non_Alcoholic') {
       HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=' + filters[0]);
-    } else if (filters[0] == 'Ordinary_Drink' || filters[0] == 'Cocktail' || filters[0] == 'Shot') {
+    } else if (filters[0] == 'Ordinary%20Drink' || filters[0] == 'Cocktail' || filters[0] == 'Shot' || filters[0] == 'Cocoa' || filters[0] == 'Homemade%20Liqueur') {
       HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + filters[0]);
     } else {
       HTTPRequest.open('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + filters[0]);
     }
     HTTPRequest.onload = function() {
       var drinksArray = JSON.parse(HTTPRequest.responseText);
-      scope.printDrinksToViewWithFilters(drinksArray, filters);
+      scope.printDrinksToView(drinksArray);
+      // scope.printDrinksToViewWithFilters(drinksArray, filters);
     };
     HTTPRequest.send();
   }
@@ -46,15 +47,12 @@ export class HomepageComponent implements OnInit {
     var drinksArrayFiltered = {'drinks': []};
     drinksArray['drinks'].forEach((drink) => {
       if (filters[1] == undefined && filters[2] == undefined) {
-        console.log('0');
         drinksArrayFiltered['drinks'].push(drink);
       } else if (filters[1] != undefined && filters[2] == undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
-        console.log('1');
         if (drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) {
           drinksArrayFiltered['drinks'].push(drink);
         }
       } else if (filters[1] != undefined && filters[2] != undefined && drink['strAlcoholic'] != undefined && drink['strCategory'] != undefined) {
-        console.log('2');
         if ((drink['strAlcoholic'].substring(0,3) == filters[1].substring(0,3) || drink['strCategory'].substring(0,3) == filters[1].substring(0,3)) &&
               (drink['strAlcoholic'].substring(0,3) == filters[2].substring(0,3) || drink['strCategory'].substring(0,3) == filters[2].substring(0,3))) {
                 drinksArrayFiltered['drinks'].push(drink);
@@ -71,7 +69,6 @@ export class HomepageComponent implements OnInit {
 
     if (Array.isArray(drinksArray['drinks'])) {
       drinksArray['drinks'].forEach((drink) => {
-        console.log(drink);
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
         var outputHTML = '<div class="drink">' +
