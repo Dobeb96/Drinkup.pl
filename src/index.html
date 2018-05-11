@@ -49,7 +49,7 @@
       if (user) {
         user.getIdToken().then(function(accessToken) {
           // document.getElementById('sign-in-status').textContent = 'zalogowano';
-          document.getElementById('sign-in').textContent = 'wyloguj się';
+          document.getElementById('sign-in').textContent = 'logout';
           if (document.getElementById('account-details')) {
             document.getElementById('user_name').innerHTML = user.displayName;
             document.getElementById('user_email').innerHTML = user.email;
@@ -59,7 +59,7 @@
       } else {
         // User is signed out.
         // document.getElementById('sign-in-status').textContent = 'wylogowano';
-        document.getElementById('sign-in').textContent = 'zaloguj się';
+        document.getElementById('sign-in').textContent = 'login';
         if (document.getElementById('account-details')) {
           document.getElementById('main_container').classList.add('hidden');
           document.getElementById('logged_out_text').classList.remove('hidden');
