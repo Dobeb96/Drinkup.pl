@@ -73,11 +73,16 @@
 }
 
 #content {
-    height: 500px;
+    height: 600px;
     max-height: 68vh;
     overflow: scroll;
 } #content::-webkit-scrollbar { 
     display: none; 
+} @media screen and (max-width: 1364px) {
+    #containerBox {
+        margin: 0 auto;
+        max-width: 600px;
+    }
 }
 
 /* DRINKS LIST */
