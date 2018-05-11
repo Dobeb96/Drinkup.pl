@@ -1,18 +1,7 @@
-.column {
-    /* float: left; */
-    /* padding: 10px; */
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 input[type="text"] {
     color: black;
-    width: 23vmax;
-    padding-left: 1em;
+    width: 30vmax;
+    padding-left: 9px;
     line-height: 3em;
 }
 
@@ -20,55 +9,59 @@ div.search_by{
 	line-height: 2em;
 } div#alcohols {
     margin-top: 5%;
-    width: 30vmax;
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 } div#alcohols div {
     padding: 0 1em;
 } div#other_filters {
     margin-top: 5%;
-    width: 30vmax;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
+} div#other_filters div {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    text-align: center;
+} div#other_filters div *:last-child {
+    padding-bottom: 2%;
+    margin-bottom: 5%;
 }
 
 img#search_by_name {
+    left: 10px;
+    background: white;
+    border: 1px solid white;
     cursor: pointer;
     padding: 0.25em;
     height: 2.5em;
 } img#search_custom {
-    margin-top: 0.25em;
+    margin: .25em 0;
     height: 2.5em;
 } #search_custom_button {
-    margin-top: 5%;
-    cursor:pointer;
+    cursor: pointer;
     text-align: center;
     width: 30vmax;
+    outline-style: outset;
+    border: 1px solid white;
     background-color: white;
 } img#back_button {
     cursor: pointer;
     height: 2.5em;
 }
 
-div#inputs {
-    display: flex;
-    flex-direction: column;
-    width: 30vmax;
-} #inputs .search1 inputs {
+#inputs .search1 inputs {
     float: left;
 }
 
 div#header_text {
     margin-top: 8%;
     text-align: center;
-    width: 30vmax;
-}
-
-table {
-    width: 30vmax;
-    text-align: center;
+} div#main_search {
+    display: flex;
+    justify-content: center;
+} div#main_search input {
+    border: 1px solid white;
 }
 
 .hidden {

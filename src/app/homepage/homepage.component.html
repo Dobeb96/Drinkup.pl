@@ -1,13 +1,11 @@
-<div class="row">
-  <div class="column">
+<div>
+  <div>
     <img src='../../assets/u80.png' id="back_button" (click)="backButtonClicked()" class="hidden">
 
-    <table>
-      <tr class="search1">
-        <td><input type="text" name="search_by_name" #search1 placeholder="Wyszukaj drinka po nazwie"/></td>
-        <td><img (click)="searchByName(search1.value, $event)" id="search_by_name" src="../../assets/u254.png" alt="szukaj"></td>
-      </tr>
-    </table>
+    <div id ="main_search" class="search1">
+      <input type="text" name="search_by_name" #search1 placeholder="Wyszukaj drinka po nazwie"/>
+      <img (click)="searchByName(search1.value, $event)" id="search_by_name" src="../../assets/u254.png" alt="szukaj">
+    </div>
 
     <div id="header_text">
       <h1>Skomponuj swojego drinka:</h1>
@@ -43,29 +41,6 @@
         <img id="search_custom" src="../../assets/u254.png">
       </button>
     </div>
-    
-    <!-- <table class="search2">
-    <tr>
-      <td>
-        Wyszukaj po typie koktajlu:<br><br>
-        <input type="checkbox" class="filter">Shot<br>
-        <input type="checkbox" class="filter">Drink<br>
-        <input type="checkbox" class="filter">Koktajl<br>
-      </td>
-      <td>
-        Wyszukaj wszystkie drinki:<br><br>
-        <input type="checkbox" class="filter">Alkoholowe<br>
-        <input type="checkbox" class="filter">Bezalkoholowe<br><br>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <button id="search_custom_button" (click)="searchByFilters()">
-          <img id="search_custom" src="../../assets/u254.png">
-        </button>
-      </td>
-    </tr>
-    </table> -->
 
     <div id="drinks_list">
       <!-- drinks from API are placed here -->

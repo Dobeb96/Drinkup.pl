@@ -39,6 +39,8 @@ export class HomepageComponent implements OnInit {
   printDrinksToView(drinksArray) {
     var outputDrinks = document.getElementById('drinks_list');
 
+    outputDrinks.innerHTML = '';
+
     if (Array.isArray(drinksArray['drinks'])) {
       drinksArray['drinks'].forEach((drink) => {
         var outputHTML = '<div class="drink">' +
