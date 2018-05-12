@@ -13,6 +13,7 @@ import {ProfileComponent} from './profile/profile.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { SafeHtmlPipeComponent } from './safe-html-pipe/safe-html-pipe.component';
 // Copy the firebaseConfig from your created project on the firebase console
 const firebaseConfig = {
   apiKey: "AIzaSyAWEdrQOJ8hp1H-_IUyfrXlas32aUo065I",
@@ -32,6 +33,7 @@ const firebaseConfig = {
     FavouritesComponent,
     AboutComponent,
     RecipeComponent,
+    SafeHtmlPipeComponent,
   ],
   imports: [
     BrowserModule,

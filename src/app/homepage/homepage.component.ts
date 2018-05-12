@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+// import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  location: Location;
 
-  constructor() { }
+  constructor(location: Location) { this.location = location; }
 
   ngOnInit() {
   }
@@ -52,7 +55,7 @@ export class HomepageComponent implements OnInit {
       drinksArray['drinks'].forEach((drink) => {
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
-        var outputHTML = '<div class="drink" (click)="method()">' +
+        var outputHTML = '<div class="drink">' +
                             '<img src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
                               '<h1>' +
@@ -61,19 +64,27 @@ export class HomepageComponent implements OnInit {
                               '<h2>' +
                               strCategory +
                               '</h2>' +
-                              '<p routerLink="about">about</p>' +
                             '</div>' +
                           '</div>';
+        // console.log(this.location.path);
+        // var sanitized = this.sanitizer.bypassSecurityTrustHtml('<p [textContent]="this.test"></p>');
+        // var sanitized = this.sanitizer.sanitize(SecurityContext.HTML, outputHTML);
+        // this.sanitizer.sanitize
+        // outputDrinks.innerHTML = sanitized;
+        // this.example = this.test(outputHTML);
         outputDrinks.innerHTML += outputHTML;
+        
       });
     } else {
-      outputDrinks.innerHTML = '<h1>Brak drinków do wyświetlenia!';
+      outputDrinks.innerHTML = '<h1>Brak drinków do wyświetlenia!</h1>';
     }
   }
 
-  method() {
-    document.getElementsByClassName('drink')[0].addEventListener
-  }
+  // test(html) {
+    // console.log(this.sanitizer.bypassSecurityTrustHtml(html));
+    // document.getElementById('drinks_list').innerHTML = <string>this.sanitizer.bypassSecurityTrustHtml(html);
+    // return this.sanitizer.bypassSecurityTrustHtml(html);
+  // }
 
   searchByName(input, event) {
     var inactiveSearch = document.getElementsByClassName('search2');
