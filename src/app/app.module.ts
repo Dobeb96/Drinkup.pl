@@ -2,8 +2,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import {AppComponent} from './app.component';
 import {AuthService} from './auth.service';
 import {HomepageComponent} from './homepage/homepage.component';
@@ -23,6 +28,7 @@ const firebaseConfig = {
   storageBucket: "drink-up-1524767130276.appspot.com",
   messagingSenderId: "861899942727"
 };
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +42,12 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   providers: [AuthService],
