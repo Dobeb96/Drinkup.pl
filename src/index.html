@@ -20,6 +20,11 @@
       messagingSenderId: "861899942727"
     };
     firebase.initializeApp(config);
+    var databaseRef = firebase.database().ref('users');
+    databaseRef.once('value').then(function(snapshot) {
+      console.log(snapshot.val());
+    });
+    databaseRef.set({drinkID: 2, notes: "notatka"});
   </script>
   
   <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
