@@ -15,7 +15,6 @@ export class FavouritesComponent implements OnInit {
   items: Observable<any[]>;
 
   constructor(public afAuth: AngularFireAuth, db: AngularFirestore) {
-    this.afAuth.auth.signInAnonymously();
     this.user = this.afAuth.authState;
     this.items = db.collection('items').valueChanges();
   }
