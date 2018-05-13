@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Drinkup.Pl</title><base href="https://doberman96.github.io/Drinkup.pl/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script><script>// Initialize Firebase
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Drinkup.Pl</title><base href="https://doberman96.github.io/Drinkup.pl/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script><script>// Initialize Firebase
     var config = {
       apiKey: "AIzaSyAWEdrQOJ8hp1H-_IUyfrXlas32aUo065I",
       authDomain: "drink-up-1524767130276.firebaseapp.com",
@@ -21,7 +21,6 @@
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         user.getIdToken().then(function(accessToken) {
-          // document.getElementById('sign-in-status').textContent = 'zalogowano';
           document.getElementById('sign-in').textContent = 'logout';
           if (document.getElementById('account-details')) {
             document.getElementById('user_name').innerHTML = user.displayName;
@@ -30,8 +29,6 @@
           }
         });
       } else {
-        // User is signed out.
-        // document.getElementById('sign-in-status').textContent = 'wylogowano';
         document.getElementById('sign-in').textContent = 'login';
         if (document.getElementById('account-details')) {
           document.getElementById('main_container').classList.add('hidden');
@@ -49,12 +46,10 @@
 
   window.addEventListener('click', function() {
     if (document.getElementById('firebaseui-auth-container')) {
-      console.log('click');
       ui.start('#firebaseui-auth-container', uiConfig); 
     }
 
     if (document.getElementById('account-details')) {
-      console.log('info');
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           document.getElementById('user_name').innerHTML = user.displayName;
@@ -66,4 +61,4 @@
         }
       })
     }
-  });</script><link href="styles.d4067e46c35f715b313a.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js"></script><script type="text/javascript" src="polyfills.194f3db5c95bb635c66b.bundle.js"></script><script type="text/javascript" src="main.cefcec08fadb05e3a927.bundle.js"></script></body></html>
+  });</script><link href="styles.d4067e46c35f715b313a.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js"></script><script type="text/javascript" src="polyfills.194f3db5c95bb635c66b.bundle.js"></script><script type="text/javascript" src="main.34727a909c8209477a62.bundle.js"></script></body></html>
