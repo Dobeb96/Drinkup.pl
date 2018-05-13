@@ -126,13 +126,13 @@ nav h1.logo {
 }
 
 .column1 {
-    flex: 60%;
+    flex: 50%;
 }
 .columnspace {
     flex: 10%;
 }
 .column2 {
-    flex: 30%;
+    flex: 40%;
 }
 
 .column {
@@ -167,3 +167,36 @@ nav h1.logo {
     width: 200%;
 }
 /* END OF ADDITIONAL */
+
+/* HIDDEN AVATARS */
+
+.cats{
+	background: url("/assets/u85.png");
+    display: inline-block;
+	width: 90px;
+	height: 90px;
+	transition: background .2s;
+}
+
+.cats#cat4:hover{
+	background: url("/assets/cat4.jpg");
+}
+.cats#cat3:hover{
+	background: url("/assets/cat3.jpg");
+}
+.cats#cat2:hover{
+	background: url("/assets/cat2.jpg");
+}
+.cats#cat1:hover{
+	background: url("/assets/cat1.jpg");
+} .column1 .space {
+    white-space: nowrap;
+    word-wrap: normal;
+} .space a {
+    text-decoration: underline;
+    font-size: 0.75em;
+} ul {
+    margin-top: 0;
+    padding-top: 0;
+}
+/* END OF HIDDEN AVATARS */
