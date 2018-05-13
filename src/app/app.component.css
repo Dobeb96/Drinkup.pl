@@ -154,6 +154,7 @@ nav h1.logo {
 }
 /* END OF POSITION */
 
+<<<<<<< HEAD
 /* ADDITIONAL */
 #photo {
     width: 100%;
@@ -169,9 +170,21 @@ nav h1.logo {
 /* END OF ADDITIONAL */
 
 /* HIDDEN AVATARS */
+=======
+/* ABOUT AND HIDDEN AVATARS */
+>>>>>>> e64ae83fccb86a4aca3034d8711b89b811b446e3
 
+div.column2a{
+	flex: 40%;
+	text-align: justify;
+}
+
+.linkedin{
+	text-decoration: underline;
+	font-size: 13px;
+}
 .cats{
-	background: url("/assets/u85.png");
+	background: url("/assets/autor.png");
     display: inline-block;
 	width: 90px;
 	height: 90px;
@@ -199,4 +212,4 @@ nav h1.logo {
     margin-top: 0;
     padding-top: 0;
 }
-/* END OF HIDDEN AVATARS */
+/* END OF ABOUT AND HIDDEN AVATARS */
