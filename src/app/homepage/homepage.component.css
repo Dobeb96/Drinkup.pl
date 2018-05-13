@@ -52,6 +52,7 @@ img#search_by_name {
     background-color: white;
 } img#back_button {
     cursor: pointer;
+    object-fit: none;
     height: 2.5em;
 }
 
