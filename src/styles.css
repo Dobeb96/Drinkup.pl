@@ -25,6 +25,9 @@
 } .hidden {
     display: none !important;
     visibility: hidden !important;
+} a {
+    color: inherit;
+    text-decoration: none;
 }
 /* END OF GENERAL */
 

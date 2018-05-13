@@ -38,7 +38,6 @@ export class HomepageComponent implements OnInit {
     HTTPRequest.onload = function() {
       var drinksArray = JSON.parse(HTTPRequest.responseText);
       scope.printDrinksToView(drinksArray);
-      // scope.printDrinksToViewWithFilters(drinksArray, filters);
     };
     HTTPRequest.send();
   }
@@ -52,7 +51,7 @@ export class HomepageComponent implements OnInit {
       drinksArray['drinks'].forEach((drink) => {
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
-        var outputHTML = '<div class="drink" (click)="method()">' +
+        var outputHTML = '<a href="/recipe/' + drink['idDrink'] + '"><div class="drink">' +
                             '<img src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
                               '<h1>' +
@@ -61,18 +60,13 @@ export class HomepageComponent implements OnInit {
                               '<h2>' +
                               strCategory +
                               '</h2>' +
-                              '<p routerLink="about">about</p>' +
                             '</div>' +
-                          '</div>';
+                          '</div></a>';
         outputDrinks.innerHTML += outputHTML;
       });
     } else {
       outputDrinks.innerHTML = '<h1>Brak drinków do wyświetlenia!';
     }
-  }
-
-  method() {
-    document.getElementsByClassName('drink')[0].addEventListener
   }
 
   searchByName(input, event) {
