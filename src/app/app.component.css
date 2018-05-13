@@ -152,5 +152,18 @@ nav h1.logo {
 } select::-webkit-scrollbar {
     display: none;
 }
-
 /* END OF POSITION */
+
+/* ADDITIONAL */
+#photo {
+    width: 100%;
+    height: auto;
+    transition: all .2s;
+    position: relative;
+    object-fit: cover;
+} #photo:hover {
+    z-index: 10;
+    height: 100%;
+    width: 200%;
+}
+/* END OF ADDITIONAL */

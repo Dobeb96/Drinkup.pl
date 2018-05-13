@@ -52,7 +52,7 @@ export class HomepageComponent implements OnInit {
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
         var outputHTML = '<a href="/recipe/' + drink['idDrink'] + '"><div class="drink">' +
-                            '<img src="' + drink['strDrinkThumb'] + '">' +
+                            '<img class="thumb" src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
                               '<h1>' +
                               drink['strDrink']  +
