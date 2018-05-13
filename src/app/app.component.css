@@ -141,3 +141,28 @@ nav h1.logo {
 }
 
 /* END OF POSITION */
+
+/* HIDDEN AVATARS */
+
+.cats{
+	background: url("/assets/u85.png");
+    display: inline-block;
+	width: 90px;
+	height: 90px;
+	transition: background .2s;
+}
+
+.cats#cat4:hover{
+	background: url("/assets/cat4.jpg");
+}
+.cats#cat3:hover{
+	background: url("/assets/cat3.jpg");
+}
+.cats#cat2:hover{
+	background: url("/assets/cat2.jpg");
+}
+.cats#cat1:hover{
+	background: url("/assets/cat1.jpg");
+}
+
+/* END OF HIDDEN AVATARS */
