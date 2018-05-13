@@ -26,11 +26,9 @@ export class FavouritesComponent implements OnInit {
               private router: Router) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        console.log(true);
       } else {
         document.getElementById('logged').classList.add('hidden');
         document.getElementById("anonymous").classList.remove('hidden');
-        console.log(false);
       }
     });
     this.drinks = db.collection('/items').valueChanges();
@@ -65,7 +63,6 @@ export class FavouritesComponent implements OnInit {
   addFavourite(){
     var _drinkID = parseInt((<HTMLInputElement>document.getElementById('drinkID')).value);
     var _notes = (<HTMLInputElement>document.getElementById('drinkDesc')).value;
-    console.log(_drinkID);
     let drinksCollection = this._db.collection<Drinks>('items');
     drinksCollection.add({ drinkID: _drinkID, notes: _notes });
     document.getElementById('drinks_list_top').innerHTML = '';
