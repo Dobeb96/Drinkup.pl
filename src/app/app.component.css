@@ -140,6 +140,19 @@ nav h1.logo {
 
 }
 
+.center {
+    text-align: center;
+} textarea {
+    border: none;
+} select {
+    padding-left: 1em;
+    border: none;
+} option {
+    font-size: 20px;
+} select::-webkit-scrollbar {
+    display: none;
+}
+
 /* END OF POSITION */
 
 /* HIDDEN AVATARS */

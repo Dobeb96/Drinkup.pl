@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Drinks { drinkID: number; notes: string; };
 
@@ -14,15 +15,26 @@ interface Drinks { drinkID: number; notes: string; };
   styleUrls: ['./favourites.component.css']
 })
 export class FavouritesComponent implements OnInit {
-  // _db: AngularFirestore;
+  scope = this;
+  _db: AngularFirestore;
   drinks: Observable<any[]>;
   drinksArray: Array<Object> = [];
 
   constructor(private http: HttpClient,
               public afAuth: AngularFireAuth,
-              db: AngularFirestore) {
+              db: AngularFirestore,
+              private router: Router) {
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        console.log(true);
+      } else {
+        document.getElementById('logged').classList.add('hidden');
+        document.getElementById("anonymous").classList.remove('hidden');
+        console.log(false);
+      }
+    });
     this.drinks = db.collection('/items').valueChanges();
-    // this._db = db;
+    this._db = db;
 
     db.collection('/items').valueChanges().subscribe(val => {
       for (var i = 0; i < val.length; i++) {
@@ -39,7 +51,7 @@ export class FavouritesComponent implements OnInit {
       // console.log('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID);
       // console.log(drink.notes);
 
-      var outputDrinks = document.getElementById('drinks_list');
+      var outputDrinks = document.getElementById('drinks_list_top');
       var APIDrink = this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID).subscribe(val => {
         for (var i = 0; i < val['drinks'].length; i++) {
           // console.log(val['drinks'][i]);
@@ -54,6 +66,16 @@ export class FavouritesComponent implements OnInit {
         }
       });
     });
+  }
+
+  addFavourite(){
+    var _drinkID = parseInt((<HTMLInputElement>document.getElementById('drinkID')).value);
+    var _notes = (<HTMLInputElement>document.getElementById('drinkDesc')).value;
+    console.log(_drinkID);
+    let drinksCollection = this._db.collection<Drinks>('items');
+    drinksCollection.add({ drinkID: _drinkID, notes: _notes });
+    document.getElementById('drinks_list_top').innerHTML = '';
+    // this.scope.router.navigate(['/homepage']); // so that the database can refresh peacefully
   }
 
   ngOnInit() {
