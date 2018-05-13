@@ -126,13 +126,13 @@ nav h1.logo {
 }
 
 .column1 {
-    flex: 60%;
+    flex: 50%;
 }
 .columnspace {
     flex: 10%;
 }
 .column2 {
-    flex: 30%;
+    flex: 40%;
 }
 
 .column {
@@ -152,11 +152,23 @@ nav h1.logo {
 } select::-webkit-scrollbar {
     display: none;
 }
-
 /* END OF POSITION */
 
-/* ABOUT AND HIDDEN AVATARS */
+/* ADDITIONAL */
+#photo {
+    width: 100%;
+    height: auto;
+    transition: all .2s;
+    position: relative;
+    object-fit: cover;
+} #photo:hover {
+    z-index: 10;
+    height: 100%;
+    width: 200%;
+}
+/* END OF ADDITIONAL */
 
+/* HIDDEN AVATARS */
 div.column2a{
 	flex: 40%;
 	text-align: justify;
@@ -200,6 +212,14 @@ div.column2a{
 }
 .cats#cat1:hover{
 	background: url("/assets/cat1.jpg");
+} .column1 .space {
+    white-space: nowrap;
+    word-wrap: normal;
+} .space a {
+    text-decoration: underline;
+    font-size: 0.75em;
+} ul {
+    margin-top: 0;
+    padding-top: 0;
 }
-
 /* END OF ABOUT AND HIDDEN AVATARS */
