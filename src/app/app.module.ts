@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularBillboardModule } from 'angular-billboard';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularBillboardModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

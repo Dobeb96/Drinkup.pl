@@ -114,3 +114,9 @@
     font-size: 1em;
 }
 /* END OF DRINKS LIST */
+
+/* BILLBOARD.JS */
+.bb-legend-item, text {
+    font-size: 18px !important;
+}
+/* END OF BILLBOARD.JS */
