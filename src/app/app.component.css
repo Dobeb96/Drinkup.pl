@@ -154,7 +154,6 @@ nav h1.logo {
 }
 /* END OF POSITION */
 
-<<<<<<< HEAD
 /* ADDITIONAL */
 #photo {
     width: 100%;
@@ -170,10 +169,6 @@ nav h1.logo {
 /* END OF ADDITIONAL */
 
 /* HIDDEN AVATARS */
-=======
-/* ABOUT AND HIDDEN AVATARS */
->>>>>>> e64ae83fccb86a4aca3034d8711b89b811b446e3
-
 div.column2a{
 	flex: 40%;
 	text-align: justify;
