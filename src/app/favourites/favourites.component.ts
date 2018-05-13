@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Drinks { drinkID: number; notes: string; };
 
@@ -14,15 +15,17 @@ interface Drinks { drinkID: number; notes: string; };
   styleUrls: ['./favourites.component.css']
 })
 export class FavouritesComponent implements OnInit {
-  // _db: AngularFirestore;
+  scope = this;
+  _db: AngularFirestore;
   drinks: Observable<any[]>;
   drinksArray: Array<Object> = [];
 
   constructor(private http: HttpClient,
               public afAuth: AngularFireAuth,
-              db: AngularFirestore) {
+              db: AngularFirestore,
+              private router: Router) {
     this.drinks = db.collection('/items').valueChanges();
-    // this._db = db;
+    this._db = db;
 
     db.collection('/items').valueChanges().subscribe(val => {
       for (var i = 0; i < val.length; i++) {
@@ -54,6 +57,16 @@ export class FavouritesComponent implements OnInit {
         }
       });
     });
+  }
+
+  addFavourite(){
+    var _drinkID = parseInt((<HTMLInputElement>document.getElementById('drinkID')).value);
+    var _notes = (<HTMLInputElement>document.getElementById('drinkDesc')).value;
+    console.log(_drinkID);
+    let drinksCollection = this._db.collection<Drinks>('items');
+    drinksCollection.add({ drinkID: _drinkID, notes: _notes });
+    document.getElementById('drinks_list').innerHTML = '';
+    // this.scope.router.navigate(['/homepage']); // so that the database can refresh peacefully
   }
 
   ngOnInit() {
