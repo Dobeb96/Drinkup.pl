@@ -155,10 +155,19 @@ nav h1.logo {
 
 /* END OF POSITION */
 
-/* HIDDEN AVATARS */
+/* ABOUT AND HIDDEN AVATARS */
 
+div.column2a{
+	flex: 40%;
+	text-align: justify;
+}
+
+.linkedin{
+	text-decoration: underline;
+	font-size: 13px;
+}
 .cats{
-	background: url("/assets/u85.png");
+	background: url("/assets/autor.png");
     display: inline-block;
 	width: 90px;
 	height: 90px;
@@ -178,4 +187,4 @@ nav h1.logo {
 	background: url("/assets/cat1.jpg");
 }
 
-/* END OF HIDDEN AVATARS */
+/* END OF ABOUT AND HIDDEN AVATARS */
