@@ -221,5 +221,11 @@ div.column2a{
 } ul {
     margin-top: 0;
     padding-top: 0;
+} .space {
+    padding-right: 2px;
+} .author .space {
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /* END OF ABOUT AND HIDDEN AVATARS */
