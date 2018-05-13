@@ -119,7 +119,7 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "/* NAV_BAR */\nnav * {\n    margin-top: 0;\n    padding-top: .3em;\n    margin-bottom: .3em;\n    padding-bottom: .3em;\n}\nnav {\n    padding: 0 1%;\n    line-height: 1em;\n    color: white;\n    font-weight: bold;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: end;\n        -ms-flex-align: end;\n            align-items: flex-end;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\nnav h1.logo {\n    font-size: 2.5em;\n    padding-right: .5em;\n    border-right: 1px solid #074265;\n    \n}\nnav div {\n    -ms-flex-item-align: center;\n        align-self: center;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n}\nnav div p {\n    cursor: pointer;\n    padding: 0 1em;\n}\nnav .to_left {\n    font-size: 1.3em;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding-left: 1.5em;\n}\nnav .to_right {\n    font-size: 1.0em;\n}\nnav .to_right p {\n    padding-top: .3em;\n    padding-bottom: .5em;\n}\nnav .to_right p:first-child {\n    border-left: 1px solid black;\n}\n@media only screen and (max-width: 1364px) {\n    nav {\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n    } nav h1.logo {\n        margin-top: 1.5%;\n        border: 0;\n        padding-right: 0;\n    } nav .to_right p:first-child {\n        border: 0;\n    } nav .to_left {\n        padding-left: 0;\n    }\n}\n/* END OF NAV_BAR*/\n/* CONTAINER */\n#container {\n    background-color: #074265;\n    border-radius: 5px;\n    height: 88vh;\n    -webkit-box-shadow: 10px 10px 12px -15px rgba(0,0,0,0.75);\n            box-shadow: 10px 10px 12px -15px rgba(0,0,0,0.75);\n}\n#containerBox {\n        background-color: #074265;\n        border-radius: 5px;\n}\n@media only screen and (max-width:1364px) {\n    #container {\n        height: 70vh;\n        border-radius: 0;\n    } #container #logo {\n        display: none;\n    }\n}\n#container #content_wrapper {\n    margin-top: 2%;\n    margin-left: 15%;\n    width: 70%;\n    min-width: 320px;\n    float: left;\n    word-wrap: break-word;\n}\n#containerBox .gradient_wrapper {\n    width: 100%;\n    background: -webkit-gradient(linear, left top, right bottom, from(#ffcc00), to(#fb2d84));\n    background: linear-gradient(to bottom right, #ffcc00, #fb2d84);\n    -webkit-box-shadow: 10px 10px 48px -15px rgba(0,0,0,0.75);\n            box-shadow: 10px 10px 48px -15px rgba(0,0,0,0.75);\n    border-radius: 8px;\n    display: inline-block;\n    padding: 4px;\n    text-decoration: none;\n}\n#containerBox #content {\n    background: #074265;\n    padding: 1em 3em;\n    border-radius: 6px;\n}\n@media only screen and (max-width:1364px) {\n    #container #content_wrapper {\n        margin-left: .1%;\n        width: 99%;\n    } #container #ad {\n        display: none;\n    }\n}\n/* END OF CONTAINER */\n/* POSITION */\n.author {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    word-wrap: break-word;\n    word-break: break-all;\n  }\n.space {\n    margin-left: 10px;\n  }\n.row {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.column1 {\n    -webkit-box-flex: 60%;\n        -ms-flex: 60%;\n            flex: 60%;\n}\n.columnspace {\n    -webkit-box-flex: 10%;\n        -ms-flex: 10%;\n            flex: 10%;\n}\n.column2 {\n    -webkit-box-flex: 30%;\n        -ms-flex: 30%;\n            flex: 30%;\n}\n.column {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n\n}\n/* END OF POSITION */"
+module.exports = "/* NAV_BAR */\nnav * {\n    margin-top: 0;\n    padding-top: .3em;\n    margin-bottom: .3em;\n    padding-bottom: .3em;\n}\nnav {\n    padding: 0 1%;\n    line-height: 1em;\n    color: white;\n    font-weight: bold;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: end;\n        -ms-flex-align: end;\n            align-items: flex-end;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\nnav h1.logo {\n    font-size: 2.5em;\n    padding-right: .5em;\n    border-right: 1px solid #074265;\n    \n}\nnav div {\n    -ms-flex-item-align: center;\n        align-self: center;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n}\nnav div p {\n    cursor: pointer;\n    padding: 0 1em;\n}\nnav .to_left {\n    font-size: 1.3em;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding-left: 1.5em;\n}\nnav .to_right {\n    font-size: 1.0em;\n}\nnav .to_right p {\n    padding-top: .3em;\n    padding-bottom: .5em;\n}\nnav .to_right p:first-child {\n    border-left: 1px solid black;\n}\n@media only screen and (max-width: 1364px) {\n    nav {\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n    } nav h1.logo {\n        margin-top: 1.5%;\n        border: 0;\n        padding-right: 0;\n    } nav .to_right p:first-child {\n        border: 0;\n    } nav .to_left {\n        padding-left: 0;\n    }\n}\n/* END OF NAV_BAR*/\n/* CONTAINER */\n#container {\n    background-color: #074265;\n    border-radius: 5px;\n    height: 88vh;\n    -webkit-box-shadow: 10px 10px 12px -15px rgba(0,0,0,0.75);\n            box-shadow: 10px 10px 12px -15px rgba(0,0,0,0.75);\n}\n#containerBox {\n        background-color: #074265;\n        border-radius: 5px;\n}\n@media only screen and (max-width:1364px) {\n    #container {\n        height: 70vh;\n        border-radius: 0;\n    } #container #logo {\n        display: none;\n    }\n}\n#container #content_wrapper {\n    margin-top: 2%;\n    margin-left: 15%;\n    width: 70%;\n    min-width: 320px;\n    float: left;\n    word-wrap: break-word;\n}\n#containerBox .gradient_wrapper {\n    width: 100%;\n    background: -webkit-gradient(linear, left top, right bottom, from(#ffcc00), to(#fb2d84));\n    background: linear-gradient(to bottom right, #ffcc00, #fb2d84);\n    -webkit-box-shadow: 10px 10px 48px -15px rgba(0,0,0,0.75);\n            box-shadow: 10px 10px 48px -15px rgba(0,0,0,0.75);\n    border-radius: 8px;\n    display: inline-block;\n    padding: 4px;\n    text-decoration: none;\n}\n#containerBox #content {\n    background: #074265;\n    padding: 1em 3em;\n    border-radius: 6px;\n}\n@media only screen and (max-width:1364px) {\n    #container #content_wrapper {\n        margin-left: .1%;\n        width: 99%;\n    } #container #ad {\n        display: none;\n    }\n}\n/* END OF CONTAINER */\n/* POSITION */\n.author {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    word-wrap: break-word;\n    word-break: break-all;\n  }\n.space {\n    margin-left: 10px;\n  }\n.row {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.column1 {\n    -webkit-box-flex: 60%;\n        -ms-flex: 60%;\n            flex: 60%;\n}\n.columnspace {\n    -webkit-box-flex: 10%;\n        -ms-flex: 10%;\n            flex: 10%;\n}\n.column2 {\n    -webkit-box-flex: 30%;\n        -ms-flex: 30%;\n            flex: 30%;\n}\n.column {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n\n}\n/* END OF POSITION */\n"
 
 /***/ }),
 
@@ -201,14 +201,12 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angular_billboard__ = __webpack_require__("./node_modules/angular-billboard/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -251,8 +249,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15_angularfire2_firestore__["b" /* AngularFirestoreModule */],
                 __WEBPACK_IMPORTED_MODULE_16_angularfire2_auth__["b" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_17_angularfire2_database__["a" /* AngularFireDatabaseModule */],
-                __WEBPACK_IMPORTED_MODULE_18__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_19_angular_billboard__["a" /* AngularBillboardModule */]
+                __WEBPACK_IMPORTED_MODULE_18__angular_common_http__["b" /* HttpClientModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
@@ -689,7 +686,7 @@ var ProfileComponent = /** @class */ (function () {
 /***/ "./src/app/recipe/recipe.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 20%\">\n\n    <input type=\"image\" src=\"assets/u80.png\" style=\"object-fit: none\">\n\n  </div>  \n\n  <div class=\"column\" style=\"flex: 70%\">\n\n    <p style=\"text-align:center; color: white;\" id=\"name\" ></p>\n\n  </div>  \n\n  <div class=\"column\" style=\"flex: 10%\">\n\n      <input type=\"image\" src=\"assets/u126.png\" style=\"object-fit: none\"/>\n\n  </div>  \n\n</div>\n<br>\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 30%\">\n      \n    <input type=\"image\" style=\"size: 50%\" id=\"photo\"/>\n\n  </div>\n\n  <div class=\"column\" style=\"flex: 70%\">\n\n      <div>\n          <select size=\"2\" style=\"background-color: #094466; width:390px; height:100%\" id=\"ingr\">\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik\">składnik</option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik\">składnik</option>\n          </select>\n      </div>\n\n  </div>\n\n</div>\n\n<br>\n\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 100%\">\n      <textarea style=\"background-color: #094466; width:550px; height: 200px\" id=\"recipe\">przepis</textarea>\n  </div>\n\n</div>\n\n<angular-billboard *ngFor=\"let chart of charts\" [chart]=\"chart\"></angular-billboard>"
+module.exports = "\n\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 20%\">\n\n    <input type=\"image\" src=\"assets/u80.png\" style=\"object-fit: none\">\n\n  </div>  \n\n  <div class=\"column\" style=\"flex: 70%\">\n\n    <p style=\"text-align:center; color: white;\" id=\"name\" ></p>\n\n  </div>  \n\n  <div class=\"column\" style=\"flex: 10%\">\n\n      <input type=\"image\" src=\"assets/u126.png\" style=\"object-fit: none\"/>\n\n  </div>  \n\n</div>\n<br>\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 30%\">\n      \n    <input type=\"image\" style=\"size: 50%\" id=\"photo\"/>\n\n  </div>\n\n  <div class=\"column\" style=\"flex: 70%\">\n\n      <div>\n          <select size=\"2\" style=\"background-color: #094466; width:390px; height:100%\" id=\"ingr\">\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik\">składnik</option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik \">składnik </option>\n            <option value=\"składnik\">składnik</option>\n          </select>\n      </div>\n\n  </div>\n\n</div>\n\n<br>\n\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"flex: 100%\">\n      <textarea style=\"background-color: #094466; width:550px; height: 200px\" id=\"recipe\">przepis</textarea>\n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -700,7 +697,6 @@ module.exports = "\n\n<div class=\"row\"> \n\n  <div class=\"column\" style=\"fl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecipeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_billboard__ = __webpack_require__("./node_modules/angular-billboard/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -712,38 +708,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var RecipeComponent = /** @class */ (function () {
-    function RecipeComponent(route, angularBillboardService) {
-        this.angularBillboardService = angularBillboardService;
+    function RecipeComponent(route) {
         this.drinkID = route.snapshot.params['id'];
         this.przykladowyMethod();
         this.fetchDrinkID(this.drinkID);
     }
     RecipeComponent.prototype.ngOnInit = function () {
-        this.chartsOptions = [
-            {
-                data: {
-                    columns: [
-                        ["data1", 100],
-                        ["data2", 300],
-                        ["data3", 200]
-                    ],
-                    type: "pie"
-                },
-                tooltip: {
-                    show: false
-                },
-                legend: {
-                    position: "right",
-                    contents: {
-                        template: "<span style='color:#fff;background-color:#ccc'>{=TITLE}</span>"
-                    }
-                },
-            }
-        ];
-        this.charts = (_a = this.angularBillboardService).generate.apply(_a, this.chartsOptions);
-        var _a;
     };
     RecipeComponent.prototype.przykladowyMethod = function () {
         // w zmiennej this.drinkID będzie siedzieć ID drinka
@@ -772,7 +743,7 @@ var RecipeComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/recipe/recipe.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_2_angular_billboard__["b" /* AngularBillboardService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
     ], RecipeComponent);
     return RecipeComponent;
 }());
