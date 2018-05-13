@@ -51,7 +51,7 @@ export class FavouritesComponent implements OnInit {
       // console.log('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID);
       // console.log(drink.notes);
 
-      var outputDrinks = document.getElementById('drinks_list');
+      var outputDrinks = document.getElementById('drinks_list_top');
       var APIDrink = this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID).subscribe(val => {
         for (var i = 0; i < val['drinks'].length; i++) {
           // console.log(val['drinks'][i]);
@@ -74,7 +74,7 @@ export class FavouritesComponent implements OnInit {
     console.log(_drinkID);
     let drinksCollection = this._db.collection<Drinks>('items');
     drinksCollection.add({ drinkID: _drinkID, notes: _notes });
-    document.getElementById('drinks_list').innerHTML = '';
+    document.getElementById('drinks_list_top').innerHTML = '';
     // this.scope.router.navigate(['/homepage']); // so that the database can refresh peacefully
   }
 
