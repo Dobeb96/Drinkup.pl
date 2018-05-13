@@ -1,6 +1,8 @@
-<div class="row"> <!-- pierwszy rząd /strzałka/nazwa/serce -->
 
-  <div class="column" style="flex: 20%"><!-- strzałka -->
+
+<div class="row"> 
+
+  <div class="column" style="flex: 20%">
 
     <input type="image" src="assets/u80.png" style="object-fit: none">
 
@@ -8,30 +10,30 @@
 
   <div class="column" style="flex: 70%">
 
-    <p style="text-align:center; color: white;">Nazwa drinka</p>
+    <p style="text-align:center; color: white;" id="name" ></p>
 
-  </div>  <!-- nazwa -->
+  </div>  
 
   <div class="column" style="flex: 10%">
 
       <input type="image" src="assets/u126.png" style="object-fit: none"/>
 
-  </div>  <!-- serce -->
+  </div>  
 
 </div>
 <br>
-<div class="row"> <!-- drugi rząd -->
+<div class="row"> 
 
   <div class="column" style="flex: 30%">
       
-    <input type="image" src="assets/u122.png" style="size: 50%"/>
+    <input type="image" style="size: 50%" id="photo"/>
 
   </div>
 
   <div class="column" style="flex: 70%">
 
       <div>
-          <select size="2" style="background-color: #094466; width:390px; height:100%">
+          <select size="2" style="background-color: #094466; width:390px; height:100%" id="ingr">
             <option value="składnik ">składnik </option>
             <option value="składnik ">składnik </option>
             <option value="składnik ">składnik </option>
@@ -51,10 +53,10 @@
 
 <br>
 
-<div class="row"> <!-- trzeci rząd -->
+<div class="row"> 
 
   <div class="column" style="flex: 100%">
-      <textarea style="background-color: #094466; width:550px; height: 200px">przepis</textarea>
+      <textarea style="background-color: #094466; width:550px; height: 200px" id="recipe">przepis</textarea>
   </div>
 
 </div>

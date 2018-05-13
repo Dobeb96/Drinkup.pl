@@ -12,6 +12,8 @@ export class RecipeComponent implements OnInit {
   constructor(route: ActivatedRoute) {
     this.drinkID = route.snapshot.params['id'];
     this.przykladowyMethod();
+    this.fetchDrinkID(this.drinkID);
+
   }
 
   ngOnInit() {
@@ -22,4 +24,26 @@ export class RecipeComponent implements OnInit {
     console.log(this.drinkID);
     // 
   }
+
+  fetchDrinkID(input) {
+    var scope = this;
+
+    var HTTPRequest = new XMLHttpRequest();
+    HTTPRequest.open('GET', ' https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + this.drinkID);
+    HTTPRequest.onload = function() {
+      var drinks = JSON.parse(HTTPRequest.responseText);
+      scope.printToView(drinks);
+      console.log(drinks);
+    };
+    HTTPRequest.send();
+    
+  }
+
+  printToView(drinks){
+    document.getElementById('name').innerHTML = drinks['strDrink'];
+    document.getElementById('recipe').innerHTML = drinks['strInstructions'];
+    // document.getElementById('photo').setAttribute("src", drinksArray["strDrinkThumb"]);
+  }
+
+
 }
