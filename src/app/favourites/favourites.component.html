@@ -1,8 +1,4 @@
-<p>
-  favourites works!
-</p>
-<ul>
-  <li *ngFor="let drink of drinks | async">
-      <pre>{{ drink | json }}</pre>
-  </li>
-</ul>
+<h1>Top drinks chosen by the authors:</h1>
+<div id="drinks_list">
+  <!-- Drinks from Firebase are rendered here  -->
+</div>

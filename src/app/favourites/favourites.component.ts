@@ -4,6 +4,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import { HttpClient } from '@angular/common/http';
 
 interface Drinks { drinkID: number; notes: string; };
 
@@ -13,26 +14,48 @@ interface Drinks { drinkID: number; notes: string; };
   styleUrls: ['./favourites.component.css']
 })
 export class FavouritesComponent implements OnInit {
-  // user: Observable<firebase.User>;
-  _db: AngularFirestore;
+  // _db: AngularFirestore;
   drinks: Observable<any[]>;
+  drinksArray: Array<Object> = [];
 
-
-  constructor(public afAuth: AngularFireAuth, db: AngularFirestore) {
-    // TODO: https://www.youtube.com/watch?v=2ciHixbc4HE
-    // this.user = this.afAuth.authState;
+  constructor(private http: HttpClient,
+              public afAuth: AngularFireAuth,
+              db: AngularFirestore) {
     this.drinks = db.collection('/items').valueChanges();
-    this._db = db;
-    console.log(this.drinks);
-    console.log(this.drinks['drinkID']);
-    this.addTshirt(15, 'dynamic');
+    // this._db = db;
+
+    db.collection('/items').valueChanges().subscribe(val => {
+      for (var i = 0; i < val.length; i++) {
+        // console.log(val[i]);
+        this.drinksArray.push(val[i]);
+      }
+      // console.log(this.drinksArray);
+      this.printDrinksToView(this.drinksArray);
+    });
+  }
+
+  printDrinksToView(drinksArray) {
+    drinksArray.forEach((drink) => {
+      // console.log('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID);
+      // console.log(drink.notes);
+
+      var outputDrinks = document.getElementById('drinks_list');
+      var APIDrink = this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID).subscribe(val => {
+        for (var i = 0; i < val['drinks'].length; i++) {
+          // console.log(val['drinks'][i]);
+          var outputHTML = `<a href="/recipe/${val['drinks'][i]['idDrink']}"><div class="drink">
+                              <img src="${val['drinks'][i]['strDrinkThumb']}">
+                              <div>
+                                <h1>${val['drinks'][i]['strDrink']}</h1>
+                                <p>${drink.notes}</p>
+                              </div>
+                            </div></a>`
+          outputDrinks.innerHTML += outputHTML;
+        }
+      });
+    });
   }
 
   ngOnInit() {
-  }
-
-  addTshirt(drinkID: number, notes: string){
-    let shirtsCollection = this._db.collection<Drinks>('items');
-    shirtsCollection.add({ drinkID: drinkID, notes: notes });
   }
 }
