@@ -11,21 +11,13 @@ export class RecipeComponent implements OnInit {
 
   constructor(route: ActivatedRoute) {
     this.drinkID = route.snapshot.params['id'];
-    this.przykladowyMethod();
-    this.fetchDrinkID(this.drinkID);
-
+    this.fetchDrinkID();
   }
 
   ngOnInit() {
   }
 
-  przykladowyMethod() {
-    // w zmiennej this.drinkID będzie siedzieć ID drinka
-    console.log(this.drinkID);
-    // 
-  }
-
-  fetchDrinkID(input) {
+  fetchDrinkID() {
     var scope = this;
 
     var HTTPRequest = new XMLHttpRequest();

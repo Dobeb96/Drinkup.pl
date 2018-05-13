@@ -2,7 +2,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AuthService} from './auth.service';
 import {HomepageComponent} from './homepage/homepage.component';
 import {LoginComponent} from './login/login.component';
-import {SignupComponent} from './signup/signup.component';
 import {ProfileComponent} from './profile/profile.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
@@ -24,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomepageComponent,
     LoginComponent,
-    SignupComponent,
     ProfileComponent,
     FavouritesComponent,
     AboutComponent,

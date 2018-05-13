@@ -38,23 +38,17 @@ export class FavouritesComponent implements OnInit {
 
     db.collection('/items').valueChanges().subscribe(val => {
       for (var i = 0; i < val.length; i++) {
-        // console.log(val[i]);
         this.drinksArray.push(val[i]);
       }
-      // console.log(this.drinksArray);
       this.printDrinksToView(this.drinksArray);
     });
   }
 
   printDrinksToView(drinksArray) {
     drinksArray.forEach((drink) => {
-      // console.log('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID);
-      // console.log(drink.notes);
-
       var outputDrinks = document.getElementById('drinks_list_top');
       var APIDrink = this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID).subscribe(val => {
         for (var i = 0; i < val['drinks'].length; i++) {
-          // console.log(val['drinks'][i]);
           var outputHTML = `<a href="recipe/${val['drinks'][i]['idDrink']}"><div class="drink">
                               <img src="${val['drinks'][i]['strDrinkThumb']}">
                               <div>
@@ -75,7 +69,6 @@ export class FavouritesComponent implements OnInit {
     let drinksCollection = this._db.collection<Drinks>('items');
     drinksCollection.add({ drinkID: _drinkID, notes: _notes });
     document.getElementById('drinks_list_top').innerHTML = '';
-    // this.scope.router.navigate(['/homepage']); // so that the database can refresh peacefully
   }
 
   ngOnInit() {
