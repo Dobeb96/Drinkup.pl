@@ -1,20 +1,20 @@
 <div id="logged" class="logged">
 <div class="center">
-  <h1>Show people the drink you like the most:</h1>
+  <h1>Pokaż innym swój ulubiony przepis na drink</h1>
   <input type="text" id="drinkID" maxlength="5" placeholder="ID of the drink">
 </div>
 <div class="center">
   <input type="text" id="drinkDesc" maxlength="50" placeholder="Short description">
 </div>
 <div class="center">
-  <button (click)="addFavourite()">Send</button>
+  <button (click)="addFavourite()">Wyślij</button>
 </div>
 </div>
 <div id="anonymous" class="anonymous hidden">
-  <h1>Login to add your own drink to the collection</h1>
+  <h2>Zaloguj się aby dodać ulubione drinki do kolekcji</h2>
 </div>
 
-<h1>Top drinks chosen by the community:</h1>
+<h1>Najlepsze drinki wybrane przez społeczność DrinkUp!</h1>
 <div id="drinks_list_top">
   <!-- Drinks from Firebase are rendered here  -->
 </div>
