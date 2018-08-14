@@ -1,0 +1,17 @@
+[94m[INFO 19:26:01.876562][0m Application.vala:154: Files version: 0.3.5
+[94m[INFO 19:26:01.876608][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[94m[INFO 19:26:19.732310][0m Application.vala:154: Files version: 0.3.5
+[94m[INFO 19:26:19.732341][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[94m[INFO 19:26:26.147558][0m Application.vala:154: Files version: 0.3.5
+[94m[INFO 19:26:26.147590][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[94m[INFO 19:27:08.987763][0m Application.vala:154: Files version: 0.3.5
+[94m[INFO 19:27:08.987794][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[94m[INFO 19:32:26.235587][0m Application.vala:154: Terminal version: 0.4.3
+[94m[INFO 19:32:26.235624][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[92m[DEBUG 19:32:26.245358][0m Settings.vala:163: Loading settings from schema 'org.pantheon.terminal.saved-state'
+[92m[DEBUG 19:32:26.246082][0m Settings.vala:163: Loading settings from schema 'org.pantheon.terminal.settings'
+[94m[INFO 19:27:59.699676][0m Application.vala:154: Files version: 0.3.5
+[94m[INFO 19:27:59.699706][0m Application.vala:156: Kernel version: 4.15.0-30-generic
+[94m[INFO 19:27:59.748728][0m Application.vala:82: Report any issues/bugs you might find to http://bugs.launchpad.net/pantheon-files
+[93m[WARNING 19:42:01.170791][0m gof-directory-async.vala:779: query info failed, Error when getting information for file '/media/maciej/UBUNTU 18_0/Documents/UEK/Programowanie aplikacji webowych/backup_ng_build/.goutputstream-CVLMNZ': No such file or directory file:///media/maciej/UBUNTU%2018_0/Documents/UEK/Programowanie%20aplikacji%20webowych/backup_ng_build/.goutputstream-CVLMNZ
+[93m[WARNING 19:52:38.991302][0m gof-directory-async.vala:789: File marked as gone when refreshing change
