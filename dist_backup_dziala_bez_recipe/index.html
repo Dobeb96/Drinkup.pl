@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Drinkup.Pl</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAWEdrQOJ8hp1H-_IUyfrXlas32aUo065I",
+      authDomain: "drink-up-1524767130276.firebaseapp.com",
+      databaseURL: "https://drink-up-1524767130276.firebaseio.com",
+      projectId: "drink-up-1524767130276",
+      storageBucket: "drink-up-1524767130276.appspot.com",
+      messagingSenderId: "861899942727"
+    };
+    firebase.initializeApp(config);
+  </script>
+  
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+  <script type="text/javascript">
+    var uiConfig = {
+      signInSuccessUrl: './index.html',
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      ],
+      tosUrl: '/homepage'
+    };
+  
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+
+<script type="text/javascript">
+  initApp = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        user.getIdToken().then(function(accessToken) {
+          document.getElementById('sign-in').textContent = 'logout';
+          if (document.getElementById('account-details')) {
+            document.getElementById('user_name').innerHTML = user.displayName;
+            document.getElementById('user_email').innerHTML = user.email;
+            document.getElementById('user_photo').setAttribute('src', user.photoURL);
+          }
+        });
+      } else {
+        document.getElementById('sign-in').textContent = 'login';
+        if (document.getElementById('account-details')) {
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
+        }
+      }
+    }, function(error) {
+      console.log(error);
+    });
+  };
+
+  window.addEventListener('load', function() {
+    initApp()
+  });
+
+  window.addEventListener('click', function() {
+    if (document.getElementById('firebaseui-auth-container')) {
+      ui.start('#firebaseui-auth-container', uiConfig); 
+    }
+
+    if (document.getElementById('account-details')) {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById('user_name').innerHTML = user.displayName;
+          document.getElementById('user_email').innerHTML = user.email;
+          document.getElementById('user_photo').setAttribute('src', user.photoURL);
+        } else {
+          document.getElementById('main_container').classList.add('hidden');
+          document.getElementById('logged_out_text').classList.remove('hidden');
+        }
+      })
+    }
+  });
+</script>
+</head>
+<body>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+</html>
