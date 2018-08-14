@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <title>Drinkup.Pl</title>
-  <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -22,7 +22,7 @@
     };
     firebase.initializeApp(config);
   </script>
-  
+
   <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
   <script type="text/javascript">
@@ -34,7 +34,7 @@
       ],
       tosUrl: '/homepage'
     };
-  
+
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ui.start('#firebaseui-auth-container', uiConfig);
   </script>
@@ -69,7 +69,7 @@
 
   window.addEventListener('click', function() {
     if (document.getElementById('firebaseui-auth-container')) {
-      ui.start('#firebaseui-auth-container', uiConfig); 
+      ui.start('#firebaseui-auth-container', uiConfig);
     }
 
     if (document.getElementById('account-details')) {
