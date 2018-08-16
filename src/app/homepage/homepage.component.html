@@ -2,14 +2,17 @@
   <div>
     <img src='./assets/u80.png' id="back_button" (click)="backButtonClicked()" class="hidden">
 
-    <div id ="main_search" class="search1">
+    <div id="header_text">
+      <h1>Stwórz swój własny drink</h1>
+	  <h2>Przed Tobą darmowa aplikacja do drinków. <br>Znajdziesz tu ciekawe przepisy na drinki, shoty oraz inne napoje.</h2>
+    </div>
+	
+	<div id ="main_search" class="search1">
       <input type="text" name="search_by_name" #search1 placeholder="Wyszukaj po nazwie"/>
       <img (click)="searchByName(search1.value, $event)" id="search_by_name" src="./assets/u254.png" alt="search">
     </div>
 
-    <div id="header_text">
-      <h1>Stwórz swój własny drink</h1>
-    </div>
+    
     <div id="alcohols" class="search2">
         <div><label for="gin">Gin</label><input id="gin" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="vodka">Wódka</label><input id="vodka" type="radio" class="filter" name="alcohol"/></div>
@@ -26,7 +29,7 @@
 
     <div id="other_filters" class="search2">
       <div>
-        <h2><b>Wybierz rodzaj</b><br><br></h2>
+        <h3><b>Wybierz rodzaj</b><br><br></h3>
         <div><label for="Ordinary%20Drink">Drink</label><input id="Ordinary%20Drink" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="Shot">Shot</label><input id="Shot" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="Cocktail">Cocktail</label><input id="Cocktail" type="radio" class="filter" name="alcohol"/></div>
@@ -34,7 +37,7 @@
         <div><label for="Homemade%20Liqueur">Domowy likier</label><input id="Homemade%20Liqueur" type="radio" class="filter" name="alcohol"/></div>
       </div>
       <div>
-        <h2><b>Wybierz typ</b><br><br></h2>
+        <h3><b>Wybierz typ</b><br><br></h3>
         <div><label for="Alcoholic">Alkoholowy</label><input id="Alcoholic" type="radio" class="filter" name="alcohol"/></div>
         <div><label for="Non_Alcoholic">Bezalkoholowy</label><input id="Non_Alcoholic" type="radio" class="filter" name="alcohol"/></div>
       </div>
