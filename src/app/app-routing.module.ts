@@ -16,7 +16,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'favourites', component: FavouritesComponent},
-  {path: 'recipe/:id', component: RecipeComponent}
+  {path: 'recipe/:id', component: RecipeComponent},
+  {path: '**', component: HomepageComponent},
 
 ];
 
