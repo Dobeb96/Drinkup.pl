@@ -9,7 +9,7 @@ import {RecipeComponent} from './recipe/recipe.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'homepage', pathMatch: 'full'},
+  {path: 'homepage', redirectTo: '', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'homepage', component: HomepageComponent},
   {path: 'profile', component: ProfileComponent},
