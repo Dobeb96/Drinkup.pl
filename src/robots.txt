@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /profile/
+Disallow: /login/
+
+Sitemap: http://drinkup.pl/sitemap.xml
