@@ -47,7 +47,7 @@ export class FavouritesComponent implements OnInit {
       var outputDrinks = document.getElementById('drinks_list_top');
       var APIDrink = this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drink.drinkID).subscribe(val => {
         for (var i = 0; i < val['drinks'].length; i++) {
-          var outputHTML = `<a href="recipe/${val['drinks'][i]['idDrink']}"><div class="drink">
+          var outputHTML = `<a href="#/recipe/${val['drinks'][i]['idDrink']}"><div class="drink">
                               <img src="${val['drinks'][i]['strDrinkThumb']}">
                               <div>
                                 <h1>${val['drinks'][i]['strDrink']}</h1>
