@@ -51,7 +51,7 @@ export class HomepageComponent implements OnInit {
       drinksArray['drinks'].forEach((drink) => {
         var strCategory = '';
         if (drink['strCategory'] !== undefined) { strCategory = drink['strCategory'] }
-        var outputHTML = '<a href="recipe/' + drink['idDrink'] + '"><div class="drink">' +
+        var outputHTML = '<a href="#/recipe/' + drink['idDrink'] + '"><div class="drink">' +
                             '<img class="thumb" src="' + drink['strDrinkThumb'] + '">' +
                             '<div>' +
                               '<h1>' +
